@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quiz_Creator_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="550" Width="700">
+    <Grid Background="#FF7E3030">
+    
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Quiz" Grid.Row="0" FontSize="72" FontFamily="Comic Sans MS" Grid.ColumnSpan="3" Margin="0,0,0,106" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF9ABDCE" />
+        <Button Content="Create" Grid.Row="1" FontSize="32" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF9ABDCE" Height="69" Width="160" />
+        <Button Content="Exit" Grid.Row="1" FontSize="32" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF9ABDCE" Margin="0,89,0,0" Width="160" Height="56" Grid.RowSpan="2" />
     </Grid>
 </Window>
