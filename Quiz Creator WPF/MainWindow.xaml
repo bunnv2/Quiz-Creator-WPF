@@ -9,12 +9,6 @@
     
     <Grid Background="Black">
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
-        <Grid>
-          
-        </Grid>
-
-
-
     </Grid>
 
 </Window>

@@ -15,12 +15,19 @@ using System.Windows.Shapes;
 
 namespace Quiz_Creator_WPF
 {
-    public partial class MainWindow : Window
+    public partial class QuizCreator : Page
     {
-        public MainWindow()
+        private Frame frame;
+
+        public QuizCreator(Frame fr)
         {
+            frame = fr;
             InitializeComponent();
-            MainFrame.Content = new MainMenu(MainFrame);
+        }
+
+        private void exit_click(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new MainMenu(frame);
         }
     }
 }

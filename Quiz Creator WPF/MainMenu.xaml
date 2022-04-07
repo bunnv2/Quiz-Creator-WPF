@@ -20,9 +20,8 @@
                 <Setter Property="Margin" Value="5"/>
                 <Setter Property="VerticalAlignment" Value="Center"/>
             </Style>
-
-
         </Grid.Resources>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
             <RowDefinition Height="0.08*"/>
@@ -36,6 +35,4 @@
         <Button Content="Quizes" Grid.Row="2" Click="Quizes_click"/>
         <Button Content="Exit" Grid.Row="3" Click="Exit_click" />
     </Grid>
-
-
 </Page>
