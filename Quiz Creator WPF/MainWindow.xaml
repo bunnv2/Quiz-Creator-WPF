@@ -5,31 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quiz_Creator_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="700">
-    <Grid Background="Gainsboro">
-        <Grid.Resources>
-            <Style TargetType="Button">
-                <Setter Property="Height" Value="50"/>
-                <Setter Property="Width" Value="150"/>
-                <Setter Property="FontSize" Value="32"/>
-                <Setter Property="FontFamily" Value="Consolas"/>
-                <Setter Property="Foreground" Value="White"/>
-                <Setter Property="Background" Value="#FF191515"/>
-            </Style>
+        Title="MainWindow" Height="450" Width="800">
+    
+    <Grid Background="Black">
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        <Grid>
+          
+        </Grid>
 
 
-        </Grid.Resources>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.2*"/>
-            <RowDefinition Height="0.07*"/>
-            <RowDefinition Height="0.07*"/>
-            <RowDefinition Height="0.07*"/>
-            <RowDefinition Height="0.2*"/>
-        </Grid.RowDefinitions>
 
-        <TextBlock Text="Quiz - creator" Grid.Row="0" FontSize="72" FontFamily="Consolas" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF191515" />
-        <Button Content="Create" Grid.Row="1" Click="Button_Click"/>
-        <Button Content="Quizes" Grid.Row="2"/>
-        <Button Content="Exit" Grid.Row="3" />
     </Grid>
+
 </Window>
