@@ -6,17 +6,30 @@
         xmlns:local="clr-namespace:Quiz_Creator_WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="700">
-    <Grid Background="#FF7E3030">
-    
+    <Grid Background="Gainsboro">
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Width" Value="150"/>
+                <Setter Property="FontSize" Value="32"/>
+                <Setter Property="FontFamily" Value="Consolas"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Background" Value="#FF191515"/>
+            </Style>
+
+
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
-            <RowDefinition Height="0.1*"/>
-            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.07*"/>
+            <RowDefinition Height="0.07*"/>
+            <RowDefinition Height="0.07*"/>
             <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Quiz" Grid.Row="0" FontSize="72" FontFamily="Comic Sans MS" Grid.ColumnSpan="3" Margin="0,0,0,106" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF9ABDCE" />
-        <Button Content="Create" Grid.Row="1" FontSize="32" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF9ABDCE" Height="69" Width="160" />
-        <Button Content="Exit" Grid.Row="1" FontSize="32" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF9ABDCE" Margin="0,89,0,0" Width="160" Height="56" Grid.RowSpan="2" />
+        <TextBlock Text="Quiz - creator" Grid.Row="0" FontSize="72" FontFamily="Consolas" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF191515" />
+        <Button Content="Create" Grid.Row="1" Click="Button_Click"/>
+        <Button Content="Quizes" Grid.Row="2"/>
+        <Button Content="Exit" Grid.Row="3" />
     </Grid>
 </Window>
