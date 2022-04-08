@@ -15,18 +15,17 @@ using System.Windows.Shapes;
 
 namespace Quiz_Creator_WPF
 {
-    /// <summary>
-    /// Logika interakcji dla klasy MainMenu.xaml
-    /// </summary>
     public partial class MainMenu : Page
     {
-        public MainMenu()
+        private Frame frame;
+        public MainMenu(Frame fr)
         {
+            frame = fr;
             InitializeComponent();
         }
         private void Create_click(object sender, RoutedEventArgs e)
         {
-
+            frame.Content = new QuizCreator(frame);
         }
 
         private void Quizes_click(object sender, RoutedEventArgs e)
