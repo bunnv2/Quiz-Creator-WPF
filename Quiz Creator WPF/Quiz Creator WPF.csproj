@@ -55,7 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Answer.cs" />
     <Compile Include="Question.cs" />
+    <Compile Include="Quiz.cs" />
     <Compile Include="QuizCreator.xaml.cs">
       <DependentUpon>QuizCreator.xaml</DependentUpon>
     </Compile>
