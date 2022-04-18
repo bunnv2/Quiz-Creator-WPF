@@ -6,9 +6,8 @@
         xmlns:local="clr-namespace:Quiz_Creator_WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="800">
-    
-    <Grid Background="Black">
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
-    </Grid>
 
+    <Grid Background="Black">
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+    </Grid>
 </Window>
