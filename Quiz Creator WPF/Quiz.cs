@@ -12,9 +12,8 @@ namespace Quiz_Creator_WPF
         public List<Question> Questions { get; set; }
 
 
-        public Quiz(List<Question> questions, string name)
+        public Quiz(string name)
         {
-            Questions = questions;
             Name = name;
         }
     }
