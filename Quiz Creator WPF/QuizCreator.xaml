@@ -98,16 +98,23 @@
                     Margin="93,0,0,0"
                     FontFamily="Consolas" FontSize="20"
                     Background="#FF191515" Foreground="White"
-                    VerticalAlignment="Top" HorizontalAlignment="Left" Click="Add_Question" Height="41" Width="197" RowDefinition.Height="0.08*" />
+                    VerticalAlignment="Top" HorizontalAlignment="Left" Click="Add_Question" Height="41" Width="197" />
                 <Button Content="FINISH QUIZ" Grid.Column="1"
                     FontFamily="Consolas" FontSize="20"
                     Background="#FF191515" Foreground="White"
                     VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,0,0,0" Height="41" Width="195" />
+                <Button Content="MODIFY" Grid.Column="1"
+                    FontFamily="Consolas" FontSize="20"
+                    Background="#FF191515" Foreground="White"
+                    VerticalAlignment="Top" HorizontalAlignment="Left"
+                    Height="31" Width="80" Margin="119,48,0,0"
+                    Click="Modify_question"/>
             </Grid>
 
             <ListBox Grid.Column="1"
                      Margin="10" Background="#FFBDBDBD" BorderThickness="0"
-                     FontFamily="Consolas" FontSize="18" Foreground="#FF191515">
+                     FontFamily="Consolas" FontSize="18" Foreground="#FF191515"
+                     x:Name="questions_listbox">
             </ListBox>
         </Grid>
     </Grid>

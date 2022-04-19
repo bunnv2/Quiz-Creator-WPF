@@ -10,12 +10,20 @@ namespace Quiz_Creator_WPF
     {
         public string QuestionText { get; set; }
         public List<Answer> Answers { get; set; }
-
-        public Question(List<Answer> answers, string name)
+        public Question(string name)
         {
             QuestionText = name;
-            Answers = answers;
+            Answers = new List<Answer>();
         }
 
+        public void AddAnswer(Answer answer)
+        {
+            Answers.Add(answer);
+        }
+
+        public override string ToString()
+        {
+            return QuestionText;
+        }
     }
 }

@@ -27,8 +27,7 @@ namespace Quiz_Creator_WPF
         {
             if (quiz_name_text.Text != "")
             {
-                frame.Content = new QuizCreator(frame);
-                Quiz quiz = new Quiz(quiz_name_text.Text);
+                frame.Content = new QuizCreator(frame, quiz_name_text.Text);
             }
             else
             {

@@ -15,6 +15,11 @@ namespace Quiz_Creator_WPF
         public Quiz(string name)
         {
             Name = name;
+            Questions = new List<Question>();
+        }
+        public void AddQuestion(Question question)
+        {
+            Questions.Add(question);
         }
     }
 }
