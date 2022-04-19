@@ -28,9 +28,18 @@ namespace Quiz_Creator_WPF
             frame.Content = new QuizName(frame);
         }
 
-        private void Quizes_click(object sender, RoutedEventArgs e)
+        private void Import_click(object sender, RoutedEventArgs e)
         {
-
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.DefaultExt = ".txt";
+            dlg.Filter = "Text documents (.txt)|*.txt";
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
+            {
+                string filename = dlg.FileName;
+                MessageBox.Show(filename);
+                frame.Content = new QuizCreator(frame, filename);
+            }
         }
 
         private void Exit_click(object sender, RoutedEventArgs e)

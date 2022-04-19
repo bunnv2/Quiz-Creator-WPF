@@ -32,7 +32,7 @@
 
         <TextBlock Text="Quiz - creator" Grid.Row="0" FontSize="72" FontFamily="Consolas" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF191515" />
         <Button Content="Create" Grid.Row="1" Click="Create_click" />
-        <Button Content="Quizes" Grid.Row="2" Click="Quizes_click" />
+        <Button Content="Import" Grid.Row="2" Click="Import_click" />
         <Button Content="Exit" Grid.Row="3" Click="Exit_click" />
     </Grid>
 </Page>

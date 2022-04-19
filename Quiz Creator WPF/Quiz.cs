@@ -21,5 +21,10 @@ namespace Quiz_Creator_WPF
         {
             Questions.Add(question);
         }
+
+        public void RemoveQuestion(Question question)
+        {
+            Questions.Remove(question);
+        }
     }
 }
