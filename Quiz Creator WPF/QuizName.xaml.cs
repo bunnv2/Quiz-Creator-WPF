@@ -15,27 +15,24 @@ using System.Windows.Shapes;
 
 namespace Quiz_Creator_WPF
 {
-    public partial class MainMenu : Page
+    public partial class QuizName : Page
     {
         private Frame frame;
-        public MainMenu(Frame fr)
+        public QuizName(Frame fr)
         {
             frame = fr;
             InitializeComponent();
         }
-        private void Create_click(object sender, RoutedEventArgs e)
+        private void Create_quiz(object sender, RoutedEventArgs e)
         {
-            frame.Content = new QuizName(frame);
-        }
-
-        private void Quizes_click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Exit_click(object sender, RoutedEventArgs e)
-        {
-            System.Windows.Application.Current.Shutdown();
+            if (quiz_name_text.Text != "")
+            {
+                frame.Content = new QuizCreator(frame, quiz_name_text.Text);
+            }
+            else
+            {
+                MessageBox.Show("Please enter a name for the quiz");
+            }
         }
     }
 }

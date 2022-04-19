@@ -55,9 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Answer.cs" />
     <Compile Include="Question.cs" />
+    <Compile Include="Quiz.cs" />
     <Compile Include="QuizCreator.xaml.cs">
       <DependentUpon>QuizCreator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuizName.xaml.cs">
+      <DependentUpon>QuizName.xaml</DependentUpon>
     </Compile>
     <Page Include="MainMenu.xaml">
       <SubType>Designer</SubType>
@@ -79,6 +84,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="QuizCreator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QuizName.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
