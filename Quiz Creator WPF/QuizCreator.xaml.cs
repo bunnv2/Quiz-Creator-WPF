@@ -26,40 +26,60 @@ namespace Quiz_Creator_WPF
 
         public QuizCreator(Frame fr, string name)
         {
-
+            frame = fr;
             if (name.Contains(".txt"))
             {
-                //string path = name;
-                //string lines = File.ReadAllText(path);
+                string path = name;
+                string lines = File.ReadAllText(path);
 
-                //string[] linesArray = lines.Split('\n');
-                //string quizName = linesArray[0];
-                //List<string> questions = new List<string>();
-                //List<string> answers = new List<string>();
-                //for (int i = 1; i < linesArray.Length; i += 5)
-                //{
-                //    Question question = new Question(linesArray[i]);
-                //    for (int j = i + 1; j < i + 5; j++)
-                //    {
-                //        if (j >= linesArray.Length)
-                //        {
-                //            break;
-                //        }
-                //        string[] temp = linesArray[j].Split(':');
-                //        Console.WriteLine(temp[0] + " " + temp[1]);
-                //        answers.Add(linesArray[j]);
-                //    }
-                //}
+                string[] linesArray = lines.Split('\n');
+                string quizName = linesArray[0];
+                quiz = new Quiz(quizName);
 
-                //InitializeComponent();
-                //return;
+                for (int i = 1; i < linesArray.Length; i += 5)
+                {
+                    Question question = new Question(linesArray[i].Trim());
+                    for (int j = i + 1; j < i + 5; j++)
+                    {
+                        if (j >= linesArray.Length)
+                        {
+                            break;
+                        }
+                        string[] temp = linesArray[j].Split(':');
+                        Answer answer = new Answer(question, temp[0], temp[1].Contains("True"));
+                        question.AddAnswer(answer);
+                    }
+                    quiz.AddQuestion(question);
+                }
+                InitializeComponent();
+                UpdateQuestions();
             }
             else
             {
                 quiz = new Quiz(name);
-                frame = fr;
                 InitializeComponent();
             }
+        }
+        private void UpdateQuestions()
+        {
+            for (int i = 0; i < quiz.Questions.Count; i++)
+            {
+                ListBoxItem item = new ListBoxItem();
+                item.Content = quiz.Questions[i];
+                item.MouseDoubleClick += ListBoxItem_Selected;
+                questions_listbox.Items.Add(item);
+                currentQuestionIndex = i;
+            }   
+            question_text.Text = quiz.Questions[0].QuestionText;
+            answer1_text.Text = quiz.Questions[0].Answers[0].Text;
+            answer2_text.Text = quiz.Questions[0].Answers[1].Text;
+            answer3_text.Text = quiz.Questions[0].Answers[2].Text;
+            answer4_text.Text = quiz.Questions[0].Answers[3].Text;
+            is_correct1.IsChecked = quiz.Questions[0].Answers[0].IsCorrect;
+            is_correct2.IsChecked = quiz.Questions[0].Answers[1].IsCorrect;
+            is_correct3.IsChecked = quiz.Questions[0].Answers[2].IsCorrect;
+            is_correct4.IsChecked = quiz.Questions[0].Answers[3].IsCorrect;
+            questions_listbox.SelectedIndex = 0;
         }
         private void Exit_click(object sender, RoutedEventArgs e)
         {
