@@ -30,7 +30,9 @@ namespace Quiz_Creator_WPF
             if (name.Contains(".txt"))
             {
                 string path = name;
+                Decrypt_file(path);
                 string lines = File.ReadAllText(path);
+                
 
                 string[] linesArray = lines.Split('\n');
                 string quizName = linesArray[0];
@@ -126,7 +128,6 @@ namespace Quiz_Creator_WPF
             is_correct3.IsChecked = false;
             is_correct4.IsChecked = false;
 
-            // add item to listbox with listboxitem_selected method
             ListBoxItem item = new ListBoxItem();
             item.Content = q;
             item.MouseDoubleClick += ListBoxItem_Selected;
@@ -253,8 +254,21 @@ namespace Quiz_Creator_WPF
                         }
                     }
                 }
-
+                Encrypt_file(fileName);
             }
+        }
+
+        private void Encrypt_file(string filepath)
+        {
+            string file_content = File.ReadAllText(filepath);
+            string encrypted_file_content = Encryption.Encrypt(file_content);
+            File.WriteAllText(filepath, encrypted_file_content);
+        }
+        private void Decrypt_file(string filepath)
+        {
+            string file_content = File.ReadAllText(filepath);
+            string decrypted_file_content = Encryption.Decrypt(file_content);
+            File.WriteAllText(filepath, decrypted_file_content);
         }
     }
 }

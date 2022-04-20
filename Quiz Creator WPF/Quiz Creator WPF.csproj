@@ -59,6 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Answer.cs" />
+    <Compile Include="Encryption.cs" />
     <Compile Include="Question.cs" />
     <Compile Include="Quiz.cs" />
     <Compile Include="QuizCreator.xaml.cs">
