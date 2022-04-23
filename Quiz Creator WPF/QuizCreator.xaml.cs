@@ -30,9 +30,8 @@ namespace Quiz_Creator_WPF
             if (name.Contains(".txt"))
             {
                 string path = name;
-                Decrypt_file(path);
-                string lines = File.ReadAllText(path);
-                
+                string lines = Decrypt_file(path);
+
 
                 string[] linesArray = lines.Split('\n');
                 string quizName = linesArray[0];
@@ -71,7 +70,7 @@ namespace Quiz_Creator_WPF
                 item.MouseDoubleClick += ListBoxItem_Selected;
                 questions_listbox.Items.Add(item);
                 currentQuestionIndex = i;
-            }   
+            }
             question_text.Text = quiz.Questions[0].QuestionText;
             answer1_text.Text = quiz.Questions[0].Answers[0].Text;
             answer2_text.Text = quiz.Questions[0].Answers[1].Text;
@@ -104,6 +103,7 @@ namespace Quiz_Creator_WPF
             if (is_correct1.IsChecked == false && is_correct2.IsChecked == false && is_correct3.IsChecked == false && is_correct4.IsChecked == false)
             {
                 MessageBox.Show("Please select at least one correct answer");
+                return;
             }
 
             Question q = new Question(question);
@@ -169,6 +169,7 @@ namespace Quiz_Creator_WPF
             if (is_correct1.IsChecked == false && is_correct2.IsChecked == false && is_correct3.IsChecked == false && is_correct4.IsChecked == false)
             {
                 MessageBox.Show("Please select at least one correct answer");
+                return;
             }
 
             questions_listbox.Items.RemoveAt(currentQuestionIndex);
@@ -264,11 +265,10 @@ namespace Quiz_Creator_WPF
             string encrypted_file_content = Encryption.Encrypt(file_content);
             File.WriteAllText(filepath, encrypted_file_content);
         }
-        private void Decrypt_file(string filepath)
+        private string Decrypt_file(string filepath)
         {
             string file_content = File.ReadAllText(filepath);
-            string decrypted_file_content = Encryption.Decrypt(file_content);
-            File.WriteAllText(filepath, decrypted_file_content);
+            return Encryption.Decrypt(file_content);
         }
     }
 }
